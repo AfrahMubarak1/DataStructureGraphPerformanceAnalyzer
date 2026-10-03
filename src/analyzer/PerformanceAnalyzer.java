@@ -70,4 +70,38 @@ public class PerformanceAnalyzer {
         System.out.println("Binary Search: O(log n)");
         System.out.println("=============================================");
     }
+    
+ // Compare BFS and DFS performance
+    public static void compareGraphTraversals(Graph graph, int startVertex) {
+
+        System.out.println("\n=============================================");
+        System.out.println("       GRAPH PERFORMANCE COMPARISON");
+        System.out.println("=============================================");
+
+        // BFS
+        long startTime = System.nanoTime();
+
+        System.out.println("\nBFS Traversal:");
+        graph.bfs(startVertex);
+
+        long bfsTime = System.nanoTime() - startTime;
+
+        // DFS
+        startTime = System.nanoTime();
+
+        System.out.println("\nDFS Traversal:");
+        graph.dfs(startVertex);
+
+        long dfsTime = System.nanoTime() - startTime;
+
+        System.out.println("\nPerformance:");
+        System.out.println("BFS Execution Time: " + bfsTime + " ns");
+        System.out.println("DFS Execution Time: " + dfsTime + " ns");
+
+        System.out.println("\nComplexity:");
+        System.out.println("BFS: O(V + E)");
+        System.out.println("DFS: O(V + E)");
+
+        System.out.println("=============================================");
+    }
 }
